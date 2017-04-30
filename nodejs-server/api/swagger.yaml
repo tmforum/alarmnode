@@ -1,0 +1,1044 @@
+---
+swagger: "2.0"
+info:
+  description: ""
+  version: "11.0"
+  title: "Alarm API"
+host: "virtserver.swaggerhub.com"
+basePath: "/tmforum/AlarmAPI/1.0.0"
+schemes:
+- "http"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+paths:
+  /listener/alarmCreateNotification:
+    post:
+      tags:
+      - "notification"
+      summary: "alarmCreate"
+      description: ""
+      operationId: "alarmCreateNotification"
+      parameters:
+      - in: "body"
+        name: "alarm"
+        required: true
+        schema:
+          $ref: "#/definitions/Alarm"
+      responses:
+        200:
+          description: "Service"
+          schema:
+            $ref: "#/definitions/Alarm"
+      x-swagger-router-controller: "Notification"
+  /listener/alarmSyncNotification:
+    post:
+      tags:
+      - "notification"
+      summary: "alarmCreate"
+      description: ""
+      operationId: "alarmSyncNotification"
+      parameters:
+      - in: "body"
+        name: "alarm"
+        required: true
+        schema:
+          $ref: "#/definitions/Alarm"
+      responses:
+        200:
+          description: "Service"
+          schema:
+            $ref: "#/definitions/Alarm"
+      x-swagger-router-controller: "Notification"
+  /listener//alarmClearedNotification:
+    post:
+      tags:
+      - "notification"
+      summary: "alarmCreate"
+      description: ""
+      operationId: "alarmClearedNotification"
+      parameters:
+      - in: "body"
+        name: "alarm"
+        required: true
+        schema:
+          $ref: "#/definitions/Alarm"
+      responses:
+        200:
+          description: "Service"
+          schema:
+            $ref: "#/definitions/Alarm"
+      x-swagger-router-controller: "Notification"
+  /listener/alarmChangeNotification:
+    post:
+      tags:
+      - "notification"
+      summary: "alarmCreate"
+      description: ""
+      operationId: "alarmChangeNotification"
+      parameters:
+      - in: "body"
+        name: "alarm"
+        required: true
+        schema:
+          $ref: "#/definitions/Alarm"
+      responses:
+        200:
+          description: "Service"
+          schema:
+            $ref: "#/definitions/Alarm"
+      x-swagger-router-controller: "Notification"
+  /listener/alarmAckStateNotification:
+    post:
+      tags:
+      - "notification"
+      summary: "alarmCreate"
+      description: ""
+      operationId: "alarmAckStateNotification"
+      parameters:
+      - in: "body"
+        name: "alarm"
+        required: true
+        schema:
+          $ref: "#/definitions/Alarm"
+      responses:
+        200:
+          description: "Service"
+          schema:
+            $ref: "#/definitions/Alarm"
+      x-swagger-router-controller: "Notification"
+  /alarm/ackAlarms:
+    post:
+      tags:
+      - "tasks"
+      summary: "alarmCreate"
+      description: ""
+      operationId: "ackAlarms"
+      parameters:
+      - in: "body"
+        name: "alarm"
+        required: true
+        schema:
+          type: "array"
+          items:
+            $ref: "#/definitions/AlarmSystemUserId"
+      responses:
+        200:
+          description: "Service"
+          schema:
+            $ref: "#/definitions/Alarm"
+      x-swagger-router-controller: "Tasks"
+  /alarm/unackAlarms:
+    post:
+      tags:
+      - "tasks"
+      summary: "alarmCreate"
+      description: ""
+      operationId: "unackAlarms"
+      parameters:
+      - in: "body"
+        name: "alarm"
+        required: true
+        schema:
+          type: "array"
+          items:
+            $ref: "#/definitions/AlarmSystemUserId"
+      responses:
+        200:
+          description: "Service"
+          schema:
+            $ref: "#/definitions/Alarm"
+      x-swagger-router-controller: "Tasks"
+  /alarm/clearAlarms:
+    post:
+      tags:
+      - "tasks"
+      summary: "alarmCreate"
+      description: ""
+      operationId: "clearAlarms"
+      parameters:
+      - in: "body"
+        name: "alarm"
+        required: true
+        schema:
+          type: "array"
+          items:
+            $ref: "#/definitions/AlarmSystemUserId"
+      responses:
+        200:
+          description: "Service"
+          schema:
+            $ref: "#/definitions/Alarm"
+      x-swagger-router-controller: "Tasks"
+  /alarm/groupAlarms:
+    post:
+      tags:
+      - "tasks"
+      summary: "alarmCreate"
+      description: ""
+      operationId: "groupAlarms"
+      parameters:
+      - in: "body"
+        name: "alarm"
+        required: true
+        schema:
+          type: "array"
+          items:
+            $ref: "#/definitions/GroupAlarm"
+      responses:
+        200:
+          description: "Service"
+          schema:
+            $ref: "#/definitions/Alarm"
+      x-swagger-router-controller: "Tasks"
+  /alarm/ungroupAlarms:
+    post:
+      tags:
+      - "tasks"
+      summary: "alarmCreate"
+      description: ""
+      operationId: "ungroupAlarms"
+      parameters:
+      - in: "body"
+        name: "alarm"
+        required: true
+        schema:
+          type: "array"
+          items:
+            $ref: "#/definitions/GroupAlarm"
+      responses:
+        200:
+          description: "Service"
+          schema:
+            $ref: "#/definitions/Alarm"
+      x-swagger-router-controller: "Tasks"
+  /alarm:
+    get:
+      tags:
+      - "Alarm"
+      summary: "alarmFind"
+      description: ""
+      operationId: "alarmFind"
+      parameters:
+      - name: "fields"
+        in: "query"
+        description: ""
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "List of Alarms"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Alarm"
+      x-swagger-router-controller: "Alarm"
+    post:
+      tags:
+      - "Alarm"
+      summary: "alarmCreate"
+      description: ""
+      operationId: "alarmCreate"
+      parameters:
+      - in: "body"
+        name: "alarm"
+        required: true
+        schema:
+          $ref: "#/definitions/Alarm"
+      responses:
+        201:
+          description: "alarm"
+          schema:
+            $ref: "#/definitions/Alarm"
+      x-swagger-router-controller: "Alarm"
+  /alarm/{alarmId}:
+    get:
+      tags:
+      - "Alarm"
+      summary: "alarmGet"
+      description: ""
+      operationId: "alarmGet"
+      parameters:
+      - name: "alarmId"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "fields"
+        in: "query"
+        description: ""
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "Service"
+          schema:
+            $ref: "#/definitions/Alarm"
+      x-swagger-router-controller: "Alarm"
+    patch:
+      tags:
+      - "Alarm"
+      summary: "AlarmPatch"
+      description: ""
+      operationId: "alarmPatch"
+      parameters:
+      - name: "alarmId"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "alarm"
+        required: true
+        schema:
+          $ref: "#/definitions/AlarmPatchableAtrributes"
+      responses:
+        200:
+          description: "Success Alarm"
+          schema:
+            $ref: "#/definitions/Alarm"
+      x-swagger-router-controller: "Alarm"
+  /alarm/{alarmId}/clear:
+    post:
+      tags:
+      - "task"
+      summary: "alarmClear"
+      description: ""
+      operationId: "alarmClear"
+      parameters:
+      - in: "body"
+        name: "alarm"
+        required: true
+        schema:
+          $ref: "#/definitions/SystemUserId"
+      - name: "alarmId"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "fields"
+        in: "query"
+        description: ""
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "Service"
+          schema:
+            $ref: "#/definitions/Alarm"
+      x-swagger-router-controller: "Task"
+definitions:
+  Alarm:
+    type: "object"
+    required:
+    - "ackState"
+    - "ackSystemId"
+    - "ackTime"
+    - "ackUserId"
+    - "alarmChangedTime"
+    - "alarmClearedTime"
+    - "alarmEscalation"
+    - "alarmRaisedTime"
+    - "alarmReportingTime"
+    - "alarmType"
+    - "clearUserId"
+    - "comments"
+    - "href"
+    - "id:"
+    - "perceivedSeverity"
+    - "plannedOutageIndication"
+    - "probableCause"
+    - "serviceAffecting"
+    - "specificProblem"
+    properties:
+      'id:':
+        type: "string"
+        description: "Local identifier of the Alarm. Note that this identifier is\
+          \ local to the server side of the interface, i.e. the alarm-owning system.\n\
+          Only EntityIdentifier can be considered as global.\n\n\n\n\nThis attribute\
+          \ is mandatory in all 3 profiles.This element is generated from an attribute.This\
+          \ attribute  is  invariantThis attribute  is  mandatoryThis attribute  is\
+          \  AVC disabled"
+        default: "alarmId0"
+      href:
+        type: "string"
+        format: "uri"
+        description: "An explanation about the puropose of this instance described\
+          \ by this schema."
+        title: "Href schema."
+      '@type':
+        type: "string"
+        description: "An explanation about the puropose of this instance described\
+          \ by this schema."
+        title: "Href schema."
+      '@schemaLocation':
+        type: "string"
+        format: "uri"
+        description: "An explanation about the puropose of this instance described\
+          \ by this schema."
+        title: "Href schema."
+      alarmType:
+        type: "string"
+        description: "Categorizes the alarm.\n\nThis attribute is mandatory in all\
+          \ 3 profiles.This element is generated from an attribute.This attribute\
+          \  is  invariantThis attribute  is  mandatoryThis attribute  is  AVC disabled"
+        title: "AlarmType schema."
+        minLength: 1
+        default: "COMMUNICATIONS_ALARM"
+      externalAlarmId:
+        type: "string"
+        description: "Categorizes the alarm.\n\nThis attribute is mandatory in all\
+          \ 3 profiles.This element is generated from an attribute.This attribute\
+          \  is  invariantThis attribute  is  mandatoryThis attribute  is  AVC disabled"
+        title: "AlarmType schema."
+        minLength: 1
+        default: "COMMUNICATIONS_ALARM"
+      alarmState:
+        $ref: "#/definitions/AlarmState"
+      perceivedSeverity:
+        $ref: "#/definitions/PerceivedSeverity"
+      probableCause:
+        type: "string"
+        description: "Further qualifies the alarm in complement of the alarmType.\
+          \ This specification does not use an enumeration, but a string with qualified\
+          \ text. Recommended values are specified in TMF063 Probable Causes Technical\
+          \ Specification.\n\n\n\n\nThis attribute is mandatory in all 3 profiles.This\
+          \ element is generated from an attribute.This attribute  is  invariantThis\
+          \ attribute  is  mandatoryThis attribute  is  AVC disabled"
+        title: "ProbableCause schema."
+        minLength: 1
+        default: "probableCause0"
+      specificProblem:
+        type: "string"
+        description: "Further qualifies the alarm in addition to the probableCause.\
+          \ This attribute is defined as a string. Values are defined by vendors.\n\
+          \n\n\n\nThis attribute is optional in all 3 profiles.This element is generated\
+          \ from an attribute.This attribute  is  optionalThis attribute  is  AVC\
+          \ disabled"
+        title: "SpecificProblem schema."
+        minLength: 1
+        default: "specificProblem0"
+      alarmedObjectType:
+        $ref: "#/definitions/AckState"
+      alarmRaisedTime:
+        type: "string"
+        format: "date-time"
+        description: "Indicates the time (as a date + time) at which the alarm occurred\
+          \ at its source.\n\n\n\n\nThis attribute is mandatory in all 3 profiles.This\
+          \ element is generated from an attribute.This attribute  is  invariantThis\
+          \ attribute  is  mandatoryThis attribute  is  AVC disabled"
+        title: "AlarmRaisedTime schema."
+      alarmChangedTime:
+        type: "string"
+        format: "date-time"
+        description: "Indicates the time (as a date + time) at which the alarm was\
+          \ chnaged at its source.\n\n\n\n\nThis attribute is mandatory in all 3 profiles.This\
+          \ element is generated from an attribute.This attribute  is  invariantThis\
+          \ attribute  is  mandatoryThis attribute  is  AVC disabled"
+        title: "AlarmRaisedTime schema."
+      alarmClearedTime:
+        type: "string"
+        format: "date-time"
+        description: "Indicates the time (as a date + time) at which the alarm is\
+          \ cleared at the source.\nNote that the automatic AVC notification generation\
+          \ is disabled for this attribute as a specific notification is generated\
+          \ for alarm clearance.\nIt is not filled on an alarm for which the clearance\
+          \ has not been received, but it is mandatory for a cleared alarm.\nThis\
+          \ attribute is mandatory in all 3 profiles.This element is generated from\
+          \ an attribute.This attribute  is  mandatoryThis attribute  is  AVC disabled"
+      proposedRepairActions:
+        type: "string"
+        description: "Indicates proposed repair actions, if known to the system emitting\
+          \ the alarm.\n\n\n\n\nThis attribute is optional in all 3 profiles.This\
+          \ element is generated from an attribute.This attribute  is  optionalThis\
+          \ attribute  is  AVC disabled"
+      alarmDetails:
+        type: "string"
+        description: "An explanation about the puropose of this instance described\
+          \ by this schema."
+      alarmReportingTime:
+        type: "string"
+        format: "date-time"
+        description: "An explanation about the puropose of this instance described\
+          \ by this schema."
+      ackState:
+        $ref: "#/definitions/AckState"
+      ackTime:
+        type: "string"
+        format: "date-time"
+        description: "An explanation about the puropose of this instance described\
+          \ by this schema."
+      ackUserId:
+        type: "string"
+        description: "An explanation about the puropose of this instance described\
+          \ by this schema."
+      ackSystemId:
+        type: "string"
+        description: "An explanation about the puropose of this instance described\
+          \ by this schema."
+      clearUserId:
+        type: "string"
+        description: "An explanation about the puropose of this instance described\
+          \ by this schema."
+      clearSystemId:
+        type: "string"
+        description: "An explanation about the puropose of this instance described\
+          \ by this schema."
+      plannedOutageIndication:
+        $ref: "#/definitions/PlannedOutageIndicator"
+      alarmEscalation:
+        type: "integer"
+        description: "An explanation about the puropose of this instance described\
+          \ by this schema."
+        title: "AlarmEscalation schema."
+        minimum: 0
+        maximum: 10
+        multipleOf: 1
+        exclusiveMinimum: false
+        exclusiveMaximum: false
+      serviceAffecting:
+        type: "boolean"
+        description: "An explanation about the puropose of this instance described\
+          \ by this schema."
+        title: "ServiceAffecting schema."
+        default: false
+      affectedService:
+        type: "array"
+        description: "An explanation about the puropose of this instance described\
+          \ by this schema."
+        title: "ParentAlarms schema."
+        items:
+          $ref: "#/definitions/0 schema."
+        minItems: 1
+      isRootCause:
+        type: "boolean"
+        description: "An explanation about the puropose of this instance described\
+          \ by this schema."
+        title: "PotentialRootCauseIndication schema."
+        default: false
+      comments:
+        type: "array"
+        items:
+          $ref: "#/definitions/0 schema._1"
+      correlatedAlarm:
+        type: "array"
+        description: "An explanation about the puropose of this instance described\
+          \ by this schema."
+        title: "UnderlyingAlarms schema."
+        items:
+          $ref: "#/definitions/0 schema._2"
+        minItems: 1
+      crossedThresholdInformation:
+        $ref: "#/definitions/CrossedThresholdInformation schema."
+      parentAlarm:
+        type: "array"
+        description: "An explanation about the puropose of this instance described\
+          \ by this schema."
+        title: "UnderlyingAlarms schema."
+        items:
+          $ref: "#/definitions/0 schema._2"
+        minItems: 1
+      alarmedObject:
+        $ref: "#/definitions/ManagedObjectInstance schema."
+    title: "Alarm schema."
+    description: "The ResourceAlarm entity contains information about a given alarm\
+      \ condition of an Managed Object.\nNote that the automatic Object Creation notification\
+      \ generation is disabled as a specific New Alarm notification is generated for\
+      \ a new alarm.\nAs the ResourceAlarm extends (by injection) EntityBase, it includes\
+      \ the attribute aliasNames, providing alias names for the name of the alarm.\
+      \ It is recommended not to use this attribute for resource alarms.\n\n\n\n\n\
+      The alarmType, perceivedSeverity, probableCause, specificProblem, managedObjectClass,\
+      \ managedObjectInstance and systemDN attributes are used for filtering. They\
+      \ must be added to the events if present in the original alarm.This entity \
+      \ is  mandatoryThis entity  is  extendableThis entity   does not generate Object\
+      \ Creation notificationsThis entity   does not generate Object Deletion notificationsThis\
+      \ entity   does not generate Object Discovery notificationsThis entity supports\
+      \ the Common Set Operation.This entity supports the Common Set Multiple Operation.This\
+      \ entity supports the Common Create Operation."
+  AlarmSystemUserId:
+    type: "object"
+    properties:
+      'userId:':
+        type: "string"
+        description: "Local identifier of the Alarm. Note that this identifier is\
+          \ local to the server side of the interface, i.e. the alarm-owning system.\n\
+          Only EntityIdentifier can be considered as global.\n\n\n\n\nThis attribute\
+          \ is mandatory in all 3 profiles.This element is generated from an attribute.This\
+          \ attribute  is  invariantThis attribute  is  mandatoryThis attribute  is\
+          \  AVC disabled"
+        default: "alarmId0"
+      systemId:
+        type: "string"
+        format: "uri"
+        description: "An explanation about the puropose of this instance described\
+          \ by this schema."
+        title: "Href schema."
+      alarm:
+        $ref: "#/definitions/Alarm"
+    title: "Alarm schema."
+    description: "The ResourceAlarm entity contains information about a given alarm\
+      \ condition of an Managed Object.\nNote that the automatic Object Creation notification\
+      \ generation is disabled as a specific New Alarm notification is generated for\
+      \ a new alarm.\nAs the ResourceAlarm extends (by injection) EntityBase, it includes\
+      \ the attribute aliasNames, providing alias names for the name of the alarm.\
+      \ It is recommended not to use this attribute for resource alarms.\n\n\n\n\n\
+      The alarmType, perceivedSeverity, probableCause, specificProblem, managedObjectClass,\
+      \ managedObjectInstance and systemDN attributes are used for filtering. They\
+      \ must be added to the events if present in the original alarm.This entity \
+      \ is  mandatoryThis entity  is  extendableThis entity   does not generate Object\
+      \ Creation notificationsThis entity   does not generate Object Deletion notificationsThis\
+      \ entity   does not generate Object Discovery notificationsThis entity supports\
+      \ the Common Set Operation.This entity supports the Common Set Multiple Operation.This\
+      \ entity supports the Common Create Operation."
+  SystemUserId:
+    type: "object"
+    properties:
+      'userId:':
+        type: "string"
+        description: "Local identifier of the Alarm. Note that this identifier is\
+          \ local to the server side of the interface, i.e. the alarm-owning system.\n\
+          Only EntityIdentifier can be considered as global.\n\n\n\n\nThis attribute\
+          \ is mandatory in all 3 profiles.This element is generated from an attribute.This\
+          \ attribute  is  invariantThis attribute  is  mandatoryThis attribute  is\
+          \  AVC disabled"
+        default: "alarmId0"
+      systemId:
+        type: "string"
+        format: "uri"
+        description: "An explanation about the puropose of this instance described\
+          \ by this schema."
+        title: "Href schema."
+    title: "Alarm schema."
+    description: "The ResourceAlarm entity contains information about a given alarm\
+      \ condition of an Managed Object.\nNote that the automatic Object Creation notification\
+      \ generation is disabled as a specific New Alarm notification is generated for\
+      \ a new alarm.\nAs the ResourceAlarm extends (by injection) EntityBase, it includes\
+      \ the attribute aliasNames, providing alias names for the name of the alarm.\
+      \ It is recommended not to use this attribute for resource alarms.\n\n\n\n\n\
+      The alarmType, perceivedSeverity, probableCause, specificProblem, managedObjectClass,\
+      \ managedObjectInstance and systemDN attributes are used for filtering. They\
+      \ must be added to the events if present in the original alarm.This entity \
+      \ is  mandatoryThis entity  is  extendableThis entity   does not generate Object\
+      \ Creation notificationsThis entity   does not generate Object Deletion notificationsThis\
+      \ entity   does not generate Object Discovery notificationsThis entity supports\
+      \ the Common Set Operation.This entity supports the Common Set Multiple Operation.This\
+      \ entity supports the Common Create Operation."
+  AckState:
+    type: "string"
+    description: "Defines the possible values for acknowledgement.\nIt is used to\
+      \ indicate whether the associated object is handled or not.This enumeration\
+      \  is  not extendable"
+    enum:
+    - "ACKNOWLEDGED"
+    - "UNACKNOWLEDGED"
+  AlarmState:
+    type: "string"
+    description: "Defines the possible values for acknowledgement.\nIt is used to\
+      \ indicate whether the associated object is handled or not.This enumeration\
+      \  is  not extendable"
+    enum:
+    - "RAISED"
+    - "UPDATED"
+    - "CLEARED"
+  ThresholdDirection:
+    type: "string"
+    description: "Defines the possible values for acknowledgement.\nIt is used to\
+      \ indicate whether the associated object is handled or not.This enumeration\
+      \  is  not extendable"
+    enum:
+    - "UP"
+    - "DOWN"
+    - "UNCHANGED"
+  AlarmType:
+    type: "string"
+    description: "This datatype defines the possible alarm values. It is aligned with\
+      \ the NGCOR aalrm type definition."
+    enum:
+    - "COMMUNICATIONS_ALARM"
+    - "COMMUNICATIONS_SIGNALLING_AND_IP_ALARM"
+    - "COMMUNICATIONS_INTERFACE_ALARM"
+    - "PROCESSING_ERROR_ALARM"
+    - "ENVIRONMENTAL_ALARM"
+    - "QUALITY_OF_SERVICE_ALARM"
+    - "QUALITY_OF_SERVICE_EQUIPMENT_PERFORMANCE_ALARM"
+    - "QUALITY_OF_SERVICE_TRAFFIC_PERFORMANCE_ALARM"
+    - "EQUIPMENT_ALARM"
+    - "EQUIPMENT_TRAFFIC_EQUIPMENT_ALARM"
+    - "EQUIPMENT_CHARGING_SYSTEM_ALARM"
+    - "EQUIPMENT_EXTERNAL_IO_EQUIPMENT_ALARM"
+    - "EQUIPMENT_RELAY_AND_TRANSMISSION_ALARM"
+    - "EQUIPMENT_EQUIPMENT_POWER_ALARM"
+    - "INTEGRITY_VIOLATION"
+    - "INTEGRITY_VIOLATION_DATA_CONFIGURATION"
+    - "INTEGRITY_VIOLATION_DATABASE_SYSTEM"
+    - "OPERATIONAL_VIOLATION"
+    - "PHYSICAL_VIOLATION"
+    - "SECURITY_SERVICE_OR_MECHANISM_VIOLATION"
+    - "TIME_DOMAIN_VIOLATION"
+    - "UNKNOWN"
+  PerceivedSeverity:
+    type: "string"
+    description: "This datatype lists the possible severities that can be allocated\
+      \ to a Alarm. The values are consistent with ITU-T Recommendation X.733. This\
+      \ specification does not recommend the use of indeterminate."
+    enum:
+    - "CRITICAL"
+    - "MAJOR"
+    - "MINOR"
+    - "WARNING"
+    - "INDETERMINATE"
+    - "CLEARED"
+  PlannedOutageIndicator:
+    type: "string"
+    description: "This datatype indicates that the Managed Object (related to the\
+      \ alarm) is in planned outage (out-of-service or in planned maintenance). This\
+      \ might also be used when an equipment is being commissioned to avoid the alarms\
+      \ propagating to other systems."
+    enum:
+    - "IN_SERVICE"
+    - "OUT_OF_SERVICE"
+  AvailabilityStatus:
+    type: "string"
+    enum:
+    - "0"
+    - "4"
+    - "3"
+    - "9"
+    - "8"
+    - "7"
+    - "2"
+    - "1"
+    - "6"
+    - "5"
+  ControlState:
+    type: "string"
+    enum:
+    - "LOCKED"
+    - "UNLOCKED"
+  ControlStatus:
+    type: "string"
+    enum:
+    - "0"
+    - "3"
+    - "1"
+    - "2"
+    - "4"
+  HolderStatus:
+    type: "string"
+    enum:
+    - "1"
+    - "2"
+    - "3"
+    - "0"
+  ObjectSource:
+    type: "string"
+    enum:
+    - "0"
+    - "1"
+    - "2"
+    - "3"
+  OperationalState:
+    type: "string"
+    enum:
+    - "0"
+    - "1"
+  ResourceFulfillmentState:
+    type: "string"
+    enum:
+    - "IN_SERVICE"
+    - "OUT_OF_SERVICE"
+    - "OUT_OF_SERVICE_BY_MAINTENANCE"
+    - "SERVICE_STATE_NOT_APPLICABLE"
+  ResourceState:
+    type: "string"
+    enum:
+    - "4"
+    - "3"
+    - "1"
+    - "7"
+    - "2"
+    - "6"
+    - "5"
+    - "8"
+    - "11"
+    - "9"
+    - "12"
+    - "10"
+    - "14"
+    - "20"
+    - "15"
+    - "17"
+    - "18"
+    - "16"
+    - "19"
+    - "13"
+    - "0"
+    - "21"
+    - "22"
+    - "23"
+  State:
+    type: "string"
+    enum:
+    - "0"
+    - "8"
+    - "6"
+    - "10"
+    - "5"
+    - "7"
+    - "4"
+    - "1"
+    - "3"
+    - "2"
+    - "9"
+  GroupAlarm:
+    type: "object"
+    properties:
+      correlatedAlarm:
+        type: "array"
+        description: "An explanation about the puropose of this instance described\
+          \ by this schema."
+        title: "UnderlyingAlarms schema."
+        items:
+          $ref: "#/definitions/0 schema._2"
+        minItems: 1
+      parentAlarm:
+        type: "array"
+        description: "An explanation about the puropose of this instance described\
+          \ by this schema."
+        title: "UnderlyingAlarms schema."
+        items:
+          $ref: "#/definitions/0 schema._2"
+        minItems: 1
+    title: "Alarm schema."
+    description: "The ResourceAlarm entity contains information about a given alarm\
+      \ condition of an Managed Object.\nNote that the automatic Object Creation notification\
+      \ generation is disabled as a specific New Alarm notification is generated for\
+      \ a new alarm.\nAs the ResourceAlarm extends (by injection) EntityBase, it includes\
+      \ the attribute aliasNames, providing alias names for the name of the alarm.\
+      \ It is recommended not to use this attribute for resource alarms.\n\n\n\n\n\
+      The alarmType, perceivedSeverity, probableCause, specificProblem, managedObjectClass,\
+      \ managedObjectInstance and systemDN attributes are used for filtering. They\
+      \ must be added to the events if present in the original alarm.This entity \
+      \ is  mandatoryThis entity  is  extendableThis entity   does not generate Object\
+      \ Creation notificationsThis entity   does not generate Object Deletion notificationsThis\
+      \ entity   does not generate Object Discovery notificationsThis entity supports\
+      \ the Common Set Operation.This entity supports the Common Set Multiple Operation.This\
+      \ entity supports the Common Create Operation."
+  AlarmPatchableAtrributes:
+    type: "object"
+    properties:
+      perceivedSeverity:
+        $ref: "#/definitions/PerceivedSeverity"
+      probableCause:
+        type: "string"
+        description: "Further qualifies the alarm in complement of the alarmType.\
+          \ This specification does not use an enumeration, but a string with qualified\
+          \ text. Recommended values are specified in TMF063 Probable Causes Technical\
+          \ Specification.\n\n\n\n\nThis attribute is mandatory in all 3 profiles.This\
+          \ element is generated from an attribute.This attribute  is  invariantThis\
+          \ attribute  is  mandatoryThis attribute  is  AVC disabled"
+        title: "ProbableCause schema."
+        minLength: 1
+        default: "probableCause0"
+      specificProblem:
+        type: "string"
+        description: "Further qualifies the alarm in addition to the probableCause.\
+          \ This attribute is defined as a string. Values are defined by vendors.\n\
+          \n\n\n\nThis attribute is optional in all 3 profiles.This element is generated\
+          \ from an attribute.This attribute  is  optionalThis attribute  is  AVC\
+          \ disabled"
+        title: "SpecificProblem schema."
+        minLength: 1
+        default: "specificProblem0"
+      proposedRepairActions:
+        type: "string"
+        description: "Indicates proposed repair actions, if known to the system emitting\
+          \ the alarm.\n\n\n\n\nThis attribute is optional in all 3 profiles.This\
+          \ element is generated from an attribute.This attribute  is  optionalThis\
+          \ attribute  is  AVC disabled"
+      alarmDetails:
+        type: "string"
+        description: "An explanation about the puropose of this instance described\
+          \ by this schema."
+      plannedOutageIndication:
+        $ref: "#/definitions/PlannedOutageIndicator"
+      alarmEscalation:
+        type: "integer"
+        description: "An explanation about the puropose of this instance described\
+          \ by this schema."
+        title: "AlarmEscalation schema."
+        minimum: 0
+        maximum: 10
+        multipleOf: 1
+        exclusiveMinimum: false
+        exclusiveMaximum: false
+      serviceAffecting:
+        type: "boolean"
+        description: "An explanation about the puropose of this instance described\
+          \ by this schema."
+        title: "ServiceAffecting schema."
+        default: false
+      affectedService:
+        type: "array"
+        description: "An explanation about the puropose of this instance described\
+          \ by this schema."
+        title: "ParentAlarms schema."
+        items:
+          $ref: "#/definitions/0 schema."
+        minItems: 1
+      comments:
+        type: "array"
+        items:
+          $ref: "#/definitions/0 schema._1"
+      crossedThresholdInformation:
+        $ref: "#/definitions/CrossedThresholdInformation schema."
+    title: "ManagedObjectInstance schema."
+    description: "An explanation about the puropose of this instance described by\
+      \ this schema."
+  0 schema.:
+    properties:
+      id:
+        type: "string"
+        description: "An explanation about the puropose of this instance described\
+          \ by this schema."
+        title: "Id schema."
+        minLength: 1
+        default: "id6"
+      href:
+        type: "string"
+        description: "An explanation about the puropose of this instance described\
+          \ by this schema."
+        title: "EntityType schema."
+        minLength: 1
+        default: "entityType6"
+    description: "An explanation about the puropose of this instance described by\
+      \ this schema."
+  0 schema._1:
+    properties:
+      userId:
+        type: "string"
+        description: "An explanation about the puropose of this instance described\
+          \ by this schema."
+        title: "Problem:userId schema."
+        minLength: 1
+        default: "userId0"
+      time:
+        type: "string"
+        format: "date-time"
+        description: "An explanation about the puropose of this instance described\
+          \ by this schema."
+        title: "Problem:time schema."
+      systemId:
+        type: "string"
+        description: "An explanation about the puropose of this instance described\
+          \ by this schema."
+        title: "Problem:systemId schema."
+        minLength: 1
+        default: "systemId0"
+      comment:
+        type: "string"
+        description: "An explanation about the puropose of this instance described\
+          \ by this schema."
+        title: "Problem:comment schema."
+        minLength: 1
+        default: "comment0"
+    description: "An explanation about the puropose of this instance described by\
+      \ this schema."
+  0 schema._2:
+    properties:
+      id:
+        type: "string"
+        description: "An explanation about the puropose of this instance described\
+          \ by this schema."
+        title: "Id schema."
+        minLength: 1
+        default: "id4"
+      href:
+        type: "string"
+        description: "An explanation about the puropose of this instance described\
+          \ by this schema."
+        title: "EntityType schema."
+        minLength: 1
+        default: "entityType4"
+    description: "An explanation about the puropose of this instance described by\
+      \ this schema."
+  CrossedThresholdInformation schema.:
+    properties:
+      thresholdId:
+        type: "string"
+        description: "Indicates the identifier of the threshold that caused the alarm."
+        title: "ThresholdId schema."
+        minLength: 1
+        default: "thresholdId0"
+      thresholdRef:
+        type: "string"
+        description: "Indicates the identifier of the threshold that caused the alarm."
+        title: "ThresholdId schema."
+        minLength: 1
+        default: "thresholdId0"
+      indicatorName:
+        type: "string"
+        description: "Indicates the name of performance indicator, KPI, gauge or counter\
+          \ which crossed the threshold. If the threshold applies to a single indicator,\
+          \ then this attribute is mandatory. It can only be omitted for complex threshold\
+          \ involving multiple indicators"
+        title: "IndicatorName schema."
+        minLength: 1
+        default: "indicatorName0"
+      observedValue:
+        type: "string"
+        description: "Indicates the observed value: the value of the indicator which\
+          \ crossed the threshold. This may be different from the thre indicator is\
+          \ a gauge and this gauge only takes on discrete values. If the threshold\
+          \ applies to a single indicator, then this attribute is mandatory. It can\
+          \ only be omitted for complex thresholdinvolving multiple indicators."
+        title: "ObservedValue schema."
+        default: "0"
+      indicatorUnit:
+        type: "string"
+        description: "This attribute identifies the unit of the measurement of the\
+          \ indicator corresponding to the threshold that has been crossed in a free\
+          \ format string."
+        title: "IndicatorUnit schema."
+        minLength: 1
+        default: "indicatorUnit0"
+      granularity:
+        type: "string"
+        description: "Indicates the granularity at which the indicator is evaluated\
+          \ for threshold crossing. If the threshold applies to a single indicator,\
+          \ then this attribute is mandatory. It can only be omitted for complex threshold\
+          \ involving multiple indicators."
+        title: "Granularity schema."
+        minLength: 1
+        default: "G_1MN"
+      direction:
+        $ref: "#/definitions/ThresholdDirection"
+      thresholdCrossingDescription:
+        type: "string"
+        description: "Contains further information on the threshold crossing alarm.\
+          \ Vendors should avoid using this field to put additional information identifying\
+          \ the indicator or the threshold id. The corresponding fields should be\
+          \ use for better alarm quality. For complex thresholds involving multiple\
+          \ indicators, this field is required to provide a textual description of\
+          \ the threshold crossing condition."
+        title: "ThresholdCrossingDescription schema."
+        minLength: 1
+        default: "thresholdCrossingDescription0"
+    description: "The threshold information when the alarm is a result of crossing\
+      \ a threshold."
+  ManagedObjectInstance schema.:
+    properties:
+      id:
+        type: "string"
+        description: "An explanation about the puropose of this instance described\
+          \ by this schema."
+        title: "Id schema."
+        minLength: 1
+        default: "id9"
+      href:
+        type: "string"
+        description: "An explanation about the puropose of this instance described\
+          \ by this schema."
+        title: "Href schema."
+        minLength: 1
+        default: "href"
+    description: "An explanation about the puropose of this instance described by\
+      \ this schema."
